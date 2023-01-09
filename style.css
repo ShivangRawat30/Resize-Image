@@ -15,9 +15,14 @@ body{
 } 
 .wrapper{
   width: 450px;
+  height: 288px;
   padding: 30px;
   background: #fff; 
   border-radius: 9px; 
+  transition: height 0.2s ease;
+}
+.wrapper.active{
+  height: 537px;
 }
 .wrapper .upload-box{
   height: 225px;
@@ -48,7 +53,14 @@ body{
   border-radius: 5px;
 }
 .wrapper .content{
+  opacity: 0;
   margin-top: 28px;
+  pointer-events: none;
+}
+.wrapper.active .content{
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.05s ease;
 }
 .content .row{
   display: flex;
@@ -56,7 +68,7 @@ body{
 }
 .content .row .column{
   width: calc(100%/2 -15px);
-}
+} 
 .row .column label{
   font-size: 1.06rem;
 }
